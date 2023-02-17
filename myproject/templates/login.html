@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+  <style>
+
+
+    body {
+        background-image: url({% static 'images/background.jpg' %});
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin:20px;
+        padding: 20px;
+        }
+    .div2{
+        line-height:0.5;
+        font-family:verdana;
+        }
+    .div1 {
+        backdrop-filter: blur(300px);
+        background-color: rgba(236,218,218,0);
+        width: 300px;
+        border: 15px;
+        padding: 20px;
+        margin: 5px;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 7px;
+
+
+         }
+    button {
+        background-color:blue;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 10;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        border-radius: 5px
+        }
+    input{
+       font-size:20px;
+       border-radius: 5px;
+       width: 99%;
+       height:30px;
+       }
+  </style>
+</head>
+<body>
+
+ <div class="div1">
+     <form action="login" method="post">
+         {% csrf_token %}
+           <div class="div2">
+                <p style="font-size:20px;text-align:center">login</p>
+           </div>
+           <div>
+                <input type="text" name="username" placeholder="enter your username" size="40"><br><br>
+                <input type="password" name="password" placeholder="enter your password" size="40"><br><br>
+                <button type="submit" >login</button>
+
+           </div>
+     </form>
+ </div>
+</body>
+</html>
